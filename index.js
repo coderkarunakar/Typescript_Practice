@@ -3,6 +3,8 @@
 //string - text type
 //bigint -whole numbers and floating point values but allows larger negative and postive nubmers than the number type
 //symbol - it is used to create globally unique identifier
+//any - we can declare any datatype
+//unknown - when ever we dont know which type of datatype we need to declare then we can use unknown
 //there are 2 types of variable declaration in ts
 //1Explict -where we manually declare the variable data type
 //Example
@@ -18,4 +20,16 @@ firstName = "hello";
 var json = JSON.parse("55"); //json.parse always return the actual datatype
 console.log(typeof json); //output will be number
 var json1 = JSON.parse("55"); //json.parse always return the actual datatype
-console.log(typeof json1); //output will be nubmer 
+console.log(typeof json1); //output will be nubmer (doubt we explicitily mentioned its types as  string but output is number becase when ever we declare type of json or json parse INFOR wont work)
+//any datatype : we can declare any datatype and modify to any datatype
+var middleName = "sohail";
+middleName = 3;
+console.log(typeof (middleName), middleName);
+//unknow - we can declare any type of datatype and when ever we dont know which type of datatype we need to use then we can use unknown
+var secondName;
+secondName = "karan";
+secondName = 3;
+secondName = false;
+if (typeof secondName == "boolean") {
+    console.log(secondName);
+}
