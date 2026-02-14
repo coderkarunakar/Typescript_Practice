@@ -1,29 +1,76 @@
-//functions in typescript
-//in typescript functions we tell the parameter,return type
+//class in typescript
+//main use of class is instead of writing a object again and again we define class once and reuse again
+//lets say every car has brand,speed,start
 
-function add(a:number,b:number):number{
-    return a+b;
+class Car{
+    brand:string;
+    speed:number;
+    constructor(brand:string,speed:number){
+        this.brand = brand;
+        this.speed = speed;
+    }
+    start(){
+        console.log(this.brand + "is starting");
+    }
 }
 
-add(2,5);
+const car1 = new Car("BMW",200);
+car1.start();
+//output:BMW is starting
+//Note:this refers to the current object
+//constructor runs automatically when object is created i.e new Car("bmw",200)
 
-//Rule (paramter: type): return Type
-
-// 2.optional parameter
-function user(name: string, age?:number){
-    console.log(name,age);
+//short syntax (no need to write variables seperately)
+class Car1{
+    constructor(public brand:string,public speed:number){}
+    start(){
+        console.log(this.brand);
+    }
 }
-user("karun"); //ok since age is option we can give or skip
-user("karan",6); //ok
 
-//3.Default paramter
-function welcome(name:string = "Guest"){
-    console.log("Hi" + name);
+
+//Access modifiers
+//keywords
+//public:accesible everywhere
+//private:accesible only inside class
+//protected:accesible inside class + child class
+class Bank{
+    private balance:number = 1000;
+    show(){
+        console.log(this.balance);
+    }
 }
-welcome();
-welcome("ram");
+const b = new Bank() //object creation
+b.show();  //works
+// b.balance  //error because it is private
 
-//4.arrow function
-const multiply = (a:number,b:number):number=>{
-    return a*b
+
+//Inheritence (reuse another class)
+class Animal{
+    eat(){
+        console.log("Eating");
+    }
+}
+class Dog extends Animal{
+    bark(){
+        console.log("barking");
+    }
+}
+
+const d  = new Dog();
+d.eat();
+d.bark();
+
+// Eating
+// barking
+
+
+
+//ReadOnly & optional
+class User{
+    readonly id:number; //readonly cannot change after assignment
+    name?:string;  //optional property
+    constructor(id:number){
+        this.id = id;
+    }
 }
