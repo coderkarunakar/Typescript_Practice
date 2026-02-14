@@ -1,22 +1,31 @@
-//Tuple :it defines multiple types of datatype in the array ,and length as well(depends on no of datatypes u give ) below we gave only 3 so only 3 elements are allowed if you add even one more you will get error
-// let ourTuple :[number, boolean, string] ;
-// ourTuple = [5, true,'karun']
-// console.log(ourTuple);
+//Object in Typescript
+//javascript syntax
+let car = {
+    type : "toyata",
+    model :"Corolla",
+    year : 2009
+}
 
-//Note: in tuple you if you give number as datatype then you need to give only number in its value not other types like stirng ,bool etc
+//Note: using Typescript we can define what kind of type we have to declare 
+const car1 :{ type: string, model: string, year:number} = {
+    type: "toyata",
+    model: "corolla",
+    year: 2009
+}
 
-// //Note : if you add readOnly then we can't push new variables.
-// let ourTuple1 :readonly[number, boolean, string] ;
-// ourTuple1 = [5, true,'karun']
-// ourTuple1.push('something'); //since we have used readonly .push is not allowed
-// console.log(ourTuple1);
+//Note: using typescript we have to define its type what we are going to define,and if we keep it empty also we will get error , and if we have defined a type like number and we gave string then also we will get error
+
+const car2 ={type:"Toyata"}
+car2.type = "Ford"
+// car2.type = 3 
+// //her we will get error because here we are trying to give number type insted of string since above we have defined type as a string and by default typescript memorize that it is a string.
 
 
-let ourTuple2: [numbertype: number, booltype: boolean, strtype: string];
-ourTuple2 = [5,false,'coding is good'];
 
-const [ as, hero] = ourTuple2;
-
-console.log(as);
-console.log(hero);
+//optional concept
+const car3 : {type: string, milege?: number} = {
+    type : "toyata",
+}
+car3.milege = 900
+//Note: optional is defined as ? and if we use this ? we can define its value outside as well or insdie of the {} as we defined above but we need to follow rules like if we declare number we have to give only number not string or other datatypes
 
