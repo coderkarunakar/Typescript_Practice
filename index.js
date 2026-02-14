@@ -1,35 +1,15 @@
-//Boolean -true or false
-//number - whole numbers and float values
-//string - text type
-//bigint -whole numbers and floating point values but allows larger negative and postive nubmers than the number type
-//symbol - it is used to create globally unique identifier
-//any - we can declare any datatype
-//unknown - when ever we dont know which type of datatype we need to declare then we can use unknown
-//there are 2 types of variable declaration in ts
-//1Explict -where we manually declare the variable data type
-//Example
-var firstName = "karunakar";
-//in the above it is similar to Js declaration simply we just mentioned its data type as string which is explicit
-// 2.Implicity
-var lastName = "Chembeti";
-//here we didn't mentioned its datatype by defult it will read as string this is called implicit
-//here we can modify the declared variables but only limited to declared datatype here datatype is string so only string is possible but not the number
-firstName = "hello";
-// firstName = 3 (here i tried to declare as a number whose datatype is string which gives error)
-//Note: this automatic identifing the value is knows as  "INFOR" in TypeScript
-var json = JSON.parse("55"); //json.parse always return the actual datatype
-console.log(typeof json); //output will be number
-var json1 = JSON.parse("55"); //json.parse always return the actual datatype
-console.log(typeof json1); //output will be nubmer (doubt we explicitily mentioned its types as  string but output is number becase when ever we declare type of json or json parse INFOR wont work)
-//any datatype : we can declare any datatype and modify to any datatype
-var middleName = "sohail";
-middleName = 3;
-console.log(typeof (middleName), middleName);
-//unknow - we can declare any type of datatype and when ever we dont know which type of datatype we need to use then we can use unknown
-var secondName;
-secondName = "karan";
-secondName = 3;
-secondName = false;
-if (typeof secondName == "boolean") {
-    console.log(secondName);
-}
+//Tuple :it defines multiple types of datatype in the array ,and length as well(depends on no of datatypes u give ) below we gave only 3 so only 3 elements are allowed if you add even one more you will get error
+// let ourTuple :[number, boolean, string] ;
+// ourTuple = [5, true,'karun']
+// console.log(ourTuple);
+//Note: in tuple you if you give number as datatype then you need to give only number in its value not other types like stirng ,bool etc
+// //Note : if you add readOnly then we can't push new variables.
+// let ourTuple1 :readonly[number, boolean, string] ;
+// ourTuple1 = [5, true,'karun']
+// ourTuple1.push('something'); //since we have used readonly .push is not allowed
+// console.log(ourTuple1);
+var ourTuple2;
+ourTuple2 = [5, false, 'coding is good'];
+var as = ourTuple2[0], hero = ourTuple2[1];
+console.log(as);
+console.log(hero);

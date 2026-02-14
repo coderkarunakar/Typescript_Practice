@@ -1,16 +1,22 @@
-// const names = ['sunil','kumar',1]; //basic way of defining the array
+//Tuple :it defines multiple types of datatype in the array ,and length as well(depends on no of datatypes u give ) below we gave only 3 so only 3 elements are allowed if you add even one more you will get error
+// let ourTuple :[number, boolean, string] ;
+// ourTuple = [5, true,'karun']
+// console.log(ourTuple);
 
-const names:String[] = ['sunil','karun'];
-console.log(names);
-//using some array methods
-names.push('kiran')
+//Note: in tuple you if you give number as datatype then you need to give only number in its value not other types like stirng ,bool etc
+
+// //Note : if you add readOnly then we can't push new variables.
+// let ourTuple1 :readonly[number, boolean, string] ;
+// ourTuple1 = [5, true,'karun']
+// ourTuple1.push('something'); //since we have used readonly .push is not allowed
+// console.log(ourTuple1);
 
 
-//what if we dont want to push something into our array we can use readonly
-// const rollNumber: readonly Number[] = [1,2,3];
-// rollNumber.push(3);  //if you uncomment here you will see error (push doesn't exist on readonly)
+let ourTuple2: [numbertype: number, booltype: boolean, strtype: string];
+ourTuple2 = [5,false,'coding is good'];
 
+const [ as, hero] = ourTuple2;
 
-//Type INference :when we give all string values inside the array and when we try to push some Number into it .it wont allow by default type inference will comes into picture in the typescript.
-
+console.log(as);
+console.log(hero);
 
