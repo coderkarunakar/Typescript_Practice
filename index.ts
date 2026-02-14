@@ -1,21 +1,23 @@
-//Type alias, and type interface
-type UserName = string;
-let name: UserName = "Karun";
-//it has 3 parts here name is the variable ,userName is the type alias,  karun is the value,here username defines which type should we declare and name is the actual storage holding value
-
-
-
-
-//object
-type User = {
-    id:number;
-    name:string,
-    isAdmin:boolean
+//Interface in Typescript(defines the shape of an object)it tells what properties an object must have
+interface User {
+    name:string;
+    age:number
 }
-const holder: User = {id:1,name:'karun',isAdmin:true};
+const holder: User = {
+    name:'karun',
+    age:2
+}
+
+//optional ? property
+interface User1{
+    name:string;
+    age?:number
+}
+
+const u1: User1 = {name:'karun'};
+u1.age = 23
 
 
-//funtion
-type Add = (a: number, b:number) =>number;
-const sum :Add = (a,b) => a+b
+//Note: interface is used only for the objects 
+//for alias is used for primitive types like number ,strings, etc and objects as well
 
