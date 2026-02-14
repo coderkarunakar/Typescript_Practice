@@ -1,23 +1,29 @@
-//Interface in Typescript(defines the shape of an object)it tells what properties an object must have
-interface User {
-    name:string;
-    age:number
-}
-const holder: User = {
-    name:'karun',
-    age:2
+//functions in typescript
+//in typescript functions we tell the parameter,return type
+
+function add(a:number,b:number):number{
+    return a+b;
 }
 
-//optional ? property
-interface User1{
-    name:string;
-    age?:number
+add(2,5);
+
+//Rule (paramter: type): return Type
+
+// 2.optional parameter
+function user(name: string, age?:number){
+    console.log(name,age);
 }
+user("karun"); //ok since age is option we can give or skip
+user("karan",6); //ok
 
-const u1: User1 = {name:'karun'};
-u1.age = 23
+//3.Default paramter
+function welcome(name:string = "Guest"){
+    console.log("Hi" + name);
+}
+welcome();
+welcome("ram");
 
-
-//Note: interface is used only for the objects 
-//for alias is used for primitive types like number ,strings, etc and objects as well
-
+//4.arrow function
+const multiply = (a:number,b:number):number=>{
+    return a*b
+}
