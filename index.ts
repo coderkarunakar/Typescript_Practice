@@ -29,3 +29,15 @@ const car3 : {type: string, milege?: number} = {
 car3.milege = 900
 //Note: optional is defined as ? and if we use this ? we can define its value outside as well or insdie of the {} as we defined above but we need to follow rules like if we declare number we have to give only number not string or other datatypes
 
+
+
+//Index signature
+//Note: index signature means we need to define its key datatype like in javascript always we used to define key as a string but here we can define like number,bool ,anydatatype by defining
+//Example
+
+const nameAgeMap :{[index:number]:  number} = {} //here it is saying key,value must be an number
+nameAgeMap [2] = 4689 //here [] is a bracket notation to access an object property,not array here u are just creating a  property with key,value
+
+// nameAgeMap [2] = "karun" //here we are getting error because we tried to define value as string instead of number
+
+//Note:mainly this index signature is used to define the key datatype 
