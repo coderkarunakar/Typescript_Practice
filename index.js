@@ -1,15 +1,32 @@
-//Tuple :it defines multiple types of datatype in the array ,and length as well(depends on no of datatypes u give ) below we gave only 3 so only 3 elements are allowed if you add even one more you will get error
-// let ourTuple :[number, boolean, string] ;
-// ourTuple = [5, true,'karun']
-// console.log(ourTuple);
-//Note: in tuple you if you give number as datatype then you need to give only number in its value not other types like stirng ,bool etc
-// //Note : if you add readOnly then we can't push new variables.
-// let ourTuple1 :readonly[number, boolean, string] ;
-// ourTuple1 = [5, true,'karun']
-// ourTuple1.push('something'); //since we have used readonly .push is not allowed
-// console.log(ourTuple1);
-var ourTuple2;
-ourTuple2 = [5, false, 'coding is good'];
-var as = ourTuple2[0], hero = ourTuple2[1];
-console.log(as);
-console.log(hero);
+//Enum
+//enum is used to define the string or number a group of named constants
+//syntax
+var cardinalDirections;
+(function (cardinalDirections) {
+    cardinalDirections[cardinalDirections["North"] = 0] = "North";
+    cardinalDirections[cardinalDirections["South"] = 1] = "South";
+    cardinalDirections[cardinalDirections["East"] = 2] = "East";
+    cardinalDirections[cardinalDirections["West"] = 3] = "West";
+})(cardinalDirections || (cardinalDirections = {}));
+var currentDirection = cardinalDirections.East;
+console.log(currentDirection);
+//Note: in typescript we can define its index number as well
+var cardinalDirections1;
+(function (cardinalDirections1) {
+    cardinalDirections1[cardinalDirections1["North"] = 2] = "North";
+    cardinalDirections1[cardinalDirections1["South"] = 3] = "South";
+    cardinalDirections1[cardinalDirections1["East"] = 4] = "East";
+    cardinalDirections1[cardinalDirections1["West"] = 7] = "West";
+})(cardinalDirections1 || (cardinalDirections1 = {}));
+var currentDirection1 = cardinalDirections1.West;
+console.log(currentDirection1);
+//see here above we have modified its index value by defining its index start value this is the beauty of typescript in enums
+//in enum we can give only string or number
+var statusCode;
+(function (statusCode) {
+    statusCode["NotFound"] = "karun";
+    statusCode[statusCode["Success"] = 200] = "Success";
+    statusCode[statusCode["Accepted"] = 202] = "Accepted";
+    statusCode["BadRequest"] = "400";
+})(statusCode || (statusCode = {}));
+console.log(statusCode);
